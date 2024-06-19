@@ -21,7 +21,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     // Phone number validation
     const phone = document.getElementById('phone').value;
-    const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+    const phoneRegex = /\(\d{3}\) \d{3}-\d{4}/;
     if (!phoneRegex.test(phone)) {
         alert('Phone number must be in the format (123) 456-7890.');
         isValid = false;
@@ -29,7 +29,8 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     // Date validation
     const date = document.getElementById('date').value;
-    const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
+    //const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$/;
+    const dateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
     if (!dateRegex.test(date)) {
         alert('Event date must be in the format MM/DD/YYYY.');
         isValid = false;
