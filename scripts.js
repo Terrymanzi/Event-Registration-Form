@@ -43,8 +43,15 @@ document.getElementById('registrationform').addEventListener('submit', function(
     }
 
 
-    if (isvalid) {
-        alert('Form submitted successfully!');
-        // Here I will add code to actually submit the form data:)
+     if (isValid) {
+        // Display a success message after submission
+        const successMessage = document.createElement('div');
+        successMessage.textContent = 'Form submitted successfully!';
+        successMessage.style.color = 'green';
+        successMessage.style.marginTop = '20px';
+        document.querySelector('.container').appendChild(successMessage);
+
+        // Clear the form
+        document.getElementById('registrationForm').reset();
     }
 });
